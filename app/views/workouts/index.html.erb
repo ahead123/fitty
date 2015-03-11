@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="col-md-12 workout-view">
+		<% if current_user %>
+		<h2 class="text-center page-header">All Da Workouts for <%= current_user.username %> |
+		<% else %>
+		<h2 class="text-center page-header">All Da Workouts |
+		<% end %>
+		<%= link_to "Log Workout", new_workout_path, class: "btn btn-default" %></h2>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+				<% @workouts.each do |workout| %>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+						<div class="panel">
+
+						<div class="panel-heading">
+							<%= link_to edit_workout_path(workout) do %>
+							created <%= time_ago_in_words(workout.created_at) %> ago
+							<% end %>
+
+							<%= link_to "x", workout_path(workout), method: :delete, data: {confirm: "You sure about that yo?"}, class: "pull-right" %>
+						</div>
+
+						<div class="panel-body">
+							<h4><%= workout.exercise.capitalize %></h4>
+							<h4>Reps: <%= workout.reps %></h4>
+							<h4>Weight: <%= workout.weight %> lbs.</h4>
+						</div>
+
+						<div class="panel-footer text-center">
+							<p>workout logged by <%= workout.user.first_name %></p>
+							<% if current_user %>
+							  <%= link_to "favorite",   favorites_path(@workout, type: "favorite"), method: :put %>
+							  <%= link_to "unfavorite", favorites_path(@workout, type: "unfavorite"), method: :put %>
+							<% end %>
+						</div>
+						</div>
+					</div>
+				<% end %>
+		</div>
+	</div>
+</div>

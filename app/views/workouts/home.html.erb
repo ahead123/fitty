@@ -1,0 +1,57 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="col-md-12 text-center text-holder">
+			<h1>Welcome to Fitty!</h1>
+			<h2>A simple space to log your workouts and fitness goals!</h2>
+				<a id="aarow" href="#main"><i class="fa fa-caret-down fa-5x"></i></a>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container">
+	<div class="row intro">
+		<div class="page-header text-center col-md-10 col-md-offset-1">
+			<h1>Start tracking your workouts and goals in 3 easy steps!</h1>
+		</div>
+	</div>
+</div>
+
+<div class="container main" name="main">
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<!-- <img src="http://placehold.it/140x140" class="img-circle img-responsive center-block"> -->
+			<span class="fa-stack fa-5x">
+  				<i class="fa fa-circle fa-stack-2x"></i>
+ 		 		<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+			</span>
+			<h3>Step 1</h3>
+			<h2>Create an account</h2>
+		</div>
+		<div class="col-md-4 text-center">
+			<!-- <img src="http://placehold.it/140x140" class="img-circle img-responsive center-block"> -->
+			<span class="fa-stack fa-5x">
+  				<i class="fa fa-circle fa-stack-2x"></i>
+ 		 		<i class="fa fa-gear fa-spin fa-stack-1x fa-inverse"></i>
+			</span>
+			<h3>Step 2</h3>
+			<h2>Start exercising</h2>
+		</div>
+		<div class="col-md-4 text-center">
+			<!-- <img src="http://placehold.it/140x140" class="img-circle img-responsive center-block"> -->
+			<span class="fa-stack fa-5x">
+  				<i class="fa fa-circle fa-stack-2x"></i>
+ 		 		<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+			</span>
+			<h3>Step 3</h3>
+			<%= link_to new_workout_path(@workout) do %>
+			<h2>Log your workout</h2>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+
+

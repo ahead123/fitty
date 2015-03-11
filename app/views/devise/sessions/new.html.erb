@@ -1,0 +1,16 @@
+
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
+  <h2 class="text-center">Sign in</h2>
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email", input_html: {class: "form-control"} %>
+    <%= f.input :password, required: true, label: false, placeholder: "Password", input_html: {class: "form-control"} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign in", class: "btn btn-primary btn-block sign-in" %>
+  </div>
+<% end %>
+
+<h4 class="text-center">Need to sign-up first? No worries. Follow this link...</h4>
+<p class="text-center"><%= link_to "Sign-up", new_user_registration_path %></p>

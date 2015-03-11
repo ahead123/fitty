@@ -1,0 +1,98 @@
+// Place all the styles related to the Workouts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.main {
+	height: 400px;
+	padding: 60px 0;
+}
+
+div.main a {
+	color: #277676;
+}
+
+div.main a:hover {
+	color: #C54141;
+	text-decoration: none;
+}
+
+div.intro {
+	padding: 20px 0 0 0;
+	color: #7B7B7B;
+}
+
+i.fa-user, i.fa-gear, i.fa-pencil {
+	color: #277676;
+}
+
+a#aarow {
+	color: #CDCDCD;
+}
+
+a#aarow:hover {
+	color: #006868;
+}
+
+
+// styles for workout form
+
+div.workout-intro {
+	background: #277676;
+	color: #CDCDCD;
+	padding: 40px 0;
+	margin-top: -5px;
+}
+
+div.workout-form input.btn {
+	background: #277676;
+	color: #CDCDCD;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input {
+  margin-bottom: 10px;
+}
+
+div.panel {
+	border: 1px solid #000101;
+}
+
+div.panel-heading {
+	background: #277676!important;
+}
+
+div.panel-heading a {
+	color: #CDCDCD;
+}
+
+div.workout-view a.btn {
+	background: #277676;
+	border: 1px solid #277676;
+	color: #CDCDCD;
+}
+
+
+
