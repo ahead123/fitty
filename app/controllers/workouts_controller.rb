@@ -34,7 +34,7 @@ class WorkoutsController < ApplicationController
   end
 
   def update
-    @workout = Workout.find params[:id]
+    @workout = Workout.find_by!(slug: params[:id])
       respond_to do |format|
       if @workout.update(workout_params)
         format.html { redirect_to workouts_path, notice: 'Workout updated yo!' }
@@ -45,7 +45,7 @@ class WorkoutsController < ApplicationController
   end
 
   def destroy
-    @workout = Workout.find params[:id]
+    @workout = Workout.find_by!(slug: params[:id])
     @workout.destroy
     respond_to do |format|
       format.html {redirect_to workouts_path, notice: "Workout deleted yo!"}
