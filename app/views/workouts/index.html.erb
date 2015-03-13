@@ -1,7 +1,8 @@
 <div class="container">
 	<div class="col-md-12 workout-view">
 		<% if current_user %>
-		<h2 class="text-center page-header">All Da Workouts for <%= current_user.username %> |
+		<h2 class="text-center">All Da Workouts!</h2> 
+		<h2 class="text-center page-header"><%= current_user.username %> did you workout today? |
 		<% else %>
 		<h2 class="text-center page-header">All Da Workouts |
 		<% end %>
@@ -28,11 +29,11 @@
 						</div>
 
 						<div class="panel-footer text-center">
-							<p>workout logged by <%= workout.user.first_name %></p>
+							<!-- <p>workout logged by <%= workout.user.first_name %></p>
 							<% if current_user %>
 							  <%= link_to "favorite",   favorites_path(@workout, type: "favorite"), method: :put %>
 							  <%= link_to "unfavorite", favorites_path(@workout, type: "unfavorite"), method: :put %>
-							<% end %>
+							<% end %> -->
 						</div>
 						</div>
 					</div>

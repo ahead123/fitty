@@ -1,17 +1,28 @@
 class ApplicationController < ActionController::Base
+  before_filter :configure_permited_parameters, if: :devise_controller?
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
+  def configure_permited_parameters
+    # parameters to allow during `sign_in`
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username) }
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name,:last_name,:username,:email, :password) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name,:last_name,:username,:email, :password) }
+    # parameters to allow during signup
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:last_name,
+      :username, :first_name, :email, :password, :password_confirmation)}
+
+    # paramters to allow during an `account update`
+    # URL: http://localhost:3000/users/edit
+    devise_parameter_sanitizer.for(:account_update) {
+                          |u| u.permit(:last_name,
+                                      :username,
+                                      :first_name,
+                                      :email,
+                                      :password,
+                                      :password_confirmation,
+                                      :current_password)}
   end
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_in) << :username
-  end
 end
