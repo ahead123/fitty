@@ -53,6 +53,6 @@ gem "font-awesome-rails"
 
 gem 'friendly_id', '~> 5.1.0'
 
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 
 
