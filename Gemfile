@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '6.0.3.5'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
@@ -45,7 +45,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '>= 3.2.2'
 
 gem 'simple_form'
 
